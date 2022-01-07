@@ -1,9 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.payhere_demo">
+    package="com.example.payhere_demo" xmlns:tools="http://schemas.android.com/tools">
    <application
         android:label="payhere_demo"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        tools:replace="android:label"
+        >
         <activity
             android:name=".MainActivity"
             android:exported="true"
