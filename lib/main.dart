@@ -34,8 +34,9 @@ class RootPage extends HookConsumerWidget {
   void xxx() {
     Map paymentObject = {
       "sandbox": true, // true if using Sandbox Merchant ID
-      "merchant_id": "1211149", // Replace your Merchant ID
-      "merchant_secret": "xyz", // See step 4e
+      "merchant_id": "1217235", // Replace your Merchant ID
+      "merchant_secret":
+          "48WqmzPtZlG8QfptjARMIN4JDF4jat5308bRs7gOSx8w", // See step 4e
       "notify_url": "http://sample.com/notify",
       "order_id": "ItemNo12345",
       "items": "Hello from Flutter!",
@@ -71,21 +72,27 @@ class RootPage extends HookConsumerWidget {
         backgroundColor: Colors.green,
         elevation: 0,
       ),
-      body: Stack(
-        children: [
-          const Background(),
-          Positioned(
-            top: 120,
-            left: Constants.commonMargin,
-            child: SearchBar(),
-          ),
-          RaisedButton(
-            child: Text("sds"),
-            onPressed: () {
-              xxx();
-            },
-          ),
-        ],
+      // body: Stack(
+      //   children: [
+      //     const Background(),
+      //     Positioned(
+      //       top: 120,
+      //       left: Constants.commonMargin,
+      //       child: SearchBar(),
+      //     ),
+      //     RaisedButton(
+      //       child: Text("sds"),
+      //       onPressed: () {
+      //         xxx();
+      //       },
+      //     ),
+      //   ],
+      // ),
+      body: RaisedButton(
+        child: Text("sds"),
+        onPressed: () {
+          xxx();
+        },
       ),
     );
   }
