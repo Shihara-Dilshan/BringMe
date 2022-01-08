@@ -1,15 +1,11 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:payhere_demo/widgets/home_page/background.dart';
-import 'package:payhere_demo/widgets/home_page/search_bar.dart';
-import 'package:payhere_mobilesdk_flutter/payhere_mobilesdk_flutter.dart';
-
-import 'config/constants.dart';
+import 'package:payhere_demo/screeens/tab_stack/cart_tab.dart';
+import 'package:payhere_demo/screeens/tab_stack/home_tab.dart';
 
 void main() {
-  runApp(ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends HookConsumerWidget {
@@ -23,46 +19,47 @@ class MyApp extends HookConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RootPage(),
+      home: RootPage(),
     );
   }
 }
 
 class RootPage extends HookConsumerWidget {
-  const RootPage({Key? key}) : super(key: key);
+  RootPage({Key? key}) : super(key: key);
 
-  void xxx() {
-    Map paymentObject = {
-      "sandbox": true, // true if using Sandbox Merchant ID
-      "merchant_id": "1217235", // Replace your Merchant ID
-      "merchant_secret":
-          "48WqmzPtZlG8QfptjARMIN4JDF4jat5308bRs7gOSx8w", // See step 4e
-      "notify_url": "http://sample.com/notify",
-      "order_id": "ItemNo12345",
-      "items": "Hello from Flutter!",
-      "amount": "50.00",
-      "currency": "LKR",
-      "first_name": "Saman",
-      "last_name": "Perera",
-      "email": "samanp@gmail.com",
-      "phone": "0771234567",
-      "address": "No.1, Galle Road",
-      "city": "Colombo",
-      "country": "Sri Lanka",
-      "delivery_address": "No. 46, Galle road, Kalutara South",
-      "delivery_city": "Kalutara",
-      "delivery_country": "Sri Lanka",
-      "custom_1": "",
-      "custom_2": ""
-    };
+  final _selectedIndex = useState(0);
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomeTab(),
+    CartTab(),
+  ];
 
-    PayHere.startPayment(paymentObject, (paymentId) {
-      print("One Time Payment Success. Payment Id: $paymentId");
-    }, (error) {
-      print("One Time Payment Failed. Error: $error");
-    }, () {
-      print("One Time Payment Dismissed");
-    });
+  void _onItemTapped(int index, BuildContext context) {
+    if (index == 2) {
+      showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 200,
+            color: Colors.amber,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('Modal BottomSheet'),
+                  ElevatedButton(
+                    child: const Text('Close BottomSheet'),
+                    onPressed: () => Navigator.pop(context),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    } else {
+      _selectedIndex.value = index;
+    }
   }
 
   @override
@@ -72,26 +69,28 @@ class RootPage extends HookConsumerWidget {
         backgroundColor: Colors.green,
         elevation: 0,
       ),
-      // body: Stack(
-      //   children: [
-      //     const Background(),
-      //     Positioned(
-      //       top: 120,
-      //       left: Constants.commonMargin,
-      //       child: SearchBar(),
-      //     ),
-      //     RaisedButton(
-      //       child: Text("sds"),
-      //       onPressed: () {
-      //         xxx();
-      //       },
-      //     ),
-      //   ],
-      // ),
-      body: RaisedButton(
-        child: Text("sds"),
-        onPressed: () {
-          xxx();
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex.value),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.green,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'Menu',
+          ),
+        ],
+        currentIndex: _selectedIndex.value,
+        onTap: (index) {
+          _onItemTapped(index, context);
         },
       ),
     );
