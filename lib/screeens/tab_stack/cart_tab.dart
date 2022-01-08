@@ -5,6 +5,6 @@ class CartTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("cart");
+    return const Text("cart");
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:payhere_demo/screeens/tab_stack/cart_tab.dart';
 import 'package:payhere_demo/screeens/tab_stack/home_tab.dart';
+import 'package:payhere_demo/utils/show_bottom_modal.dart';
+import 'package:payhere_demo/widgets/side_menu/side_menu.dart';
 
 class RootPage extends HookWidget {
   RootPage({Key? key}) : super(key: key);
@@ -14,28 +16,7 @@ class RootPage extends HookWidget {
 
   void _onItemTapped(int index, BuildContext context) {
     if (index == 2) {
-      showModalBottomSheet<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            height: 200,
-            color: Colors.amber,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const Text('Modal BottomSheet'),
-                  ElevatedButton(
-                    child: const Text('Close BottomSheet'),
-                    onPressed: () => Navigator.pop(context),
-                  )
-                ],
-              ),
-            ),
-          );
-        },
-      );
+      ShowBottomModal.show(widget: const SideMenu(), context: context);
     } else {
       _selectedIndex.value = index;
     }
