@@ -1,4 +1,6 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:payhere_demo/screeens/root_screen/root_screen.dart';
 
@@ -17,7 +19,15 @@ class MyApp extends HookConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: RootPage(),
+      home: AnimatedSplashScreen(
+        duration: 3000,
+        splash: Image.asset('assets/logo.png'),
+        nextScreen: RootPage(),
+        splashTransition: SplashTransition.fadeTransition,
+        pageTransitionType: PageTransitionType.fade,
+        backgroundColor: Colors.white,
+        splashIconSize: 250,
+      ),
     );
   }
 }
