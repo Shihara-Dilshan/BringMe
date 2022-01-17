@@ -11,13 +11,13 @@ class ItemCard extends StatelessWidget {
         "48WqmzPtZlG8QfptjARMIN4JDF4jat5308bRs7gOSx8w", // See step 4e
     "notify_url": "http://sample.com/notify",
     "order_id": "ItemNo12345",
-    "items": "Hello from Flutter!",
-    "amount": "50.00",
+    "items": "Signal Toothpaste Strong Teeth 160g",
+    "amount": "120.00",
     "currency": "LKR",
-    "first_name": "Saman",
-    "last_name": "Perera",
-    "email": "samanp@gmail.com",
-    "phone": "0771234567",
+    "first_name": "Shihara",
+    "last_name": "Dilshan",
+    "email": "shihara@gmail.com",
+    "phone": "0750935556",
     "address": "No.1, Galle Road",
     "city": "Colombo",
     "country": "Sri Lanka",
@@ -86,12 +86,12 @@ class ItemCard extends StatelessWidget {
                     ),
                     onPressed: () {
                       PayHere.startPayment(paymentObject, (paymentId) {
-                        print(
-                            "One Time Payment Success. Payment Id: $paymentId");
+                        // print(
+                        //     "One Time Payment Success. Payment Id: $paymentId");
                       }, (error) {
-                        print("One Time Payment Failed. Error: $error");
+                        //print("One Time Payment Failed. Error: $error");
                       }, () {
-                        print("One Time Payment Dismissed");
+                        //print("One Time Payment Dismissed");
                       });
                     },
                     child: const Text('Buy now'),

@@ -55,7 +55,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://raw.githubusercontent.com/Shihara-Dilshan/BringMeLK-Android-FireBase/master/app/src/main/res/drawable-hdpi/deliverv2.jpg"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/DirectImportCarousel.jpg"),
                 ),
               ),
             ),
@@ -65,7 +65,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.istockphoto.com/photos/hot-air-balloons-flying-over-the-botan-canyon-in-turkey-picture-id1297349747?s=612x612"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),
@@ -75,7 +75,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.istockphoto.com/photos/hot-air-balloons-flying-over-the-botan-canyon-in-turkey-picture-id1297349747?s=612x612"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),
