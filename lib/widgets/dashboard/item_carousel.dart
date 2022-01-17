@@ -15,7 +15,7 @@ final List<Widget> imageSliders = imgList
           child: Container(
             margin: EdgeInsets.only(right: 10.0, bottom: 20.0),
             child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderRadius: BorderRadius.all(Radius.circular(6.0)),
                 child: Stack(
                   children: <Widget>[
                     Image.network(item, fit: BoxFit.cover, width: 1000.0),
