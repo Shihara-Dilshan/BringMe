@@ -31,51 +31,51 @@ class _ImageCarouselState extends State<ImageCarousel> {
           items: [
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://raw.githubusercontent.com/Shihara-Dilshan/BringMeLK-Android-FireBase/master/app/src/main/res/drawable-hdpi/deliverv2.jpg"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/DirectImportCarousel.jpg"),
                 ),
               ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.gettyimages.com/photos/delicious-fresh-vegetables-and-fruits-at-the-refrigerated-section-of-picture-id1172975655?s=2048x2048"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://raw.githubusercontent.com/Shihara-Dilshan/BringMeLK-Android-FireBase/master/app/src/main/res/drawable-hdpi/deliverv2.jpg"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/DirectImportCarousel.jpg"),
                 ),
               ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.istockphoto.com/photos/hot-air-balloons-flying-over-the-botan-canyon-in-turkey-picture-id1297349747?s=612x612"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.istockphoto.com/photos/hot-air-balloons-flying-over-the-botan-canyon-in-turkey-picture-id1297349747?s=612x612"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),
