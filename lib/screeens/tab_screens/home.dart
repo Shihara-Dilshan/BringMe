@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payhere_demo/widgets/dashboard/image_carousel.dart';
+import 'package:payhere_demo/widgets/dashboard/item_card.dart';
 
 class CarouselDemo extends StatefulWidget {
   const CarouselDemo({Key? key}) : super(key: key);
@@ -17,11 +18,16 @@ class _CarouselDemoState extends State<CarouselDemo> {
   void initState() {
     super.initState();
     _customListViewController.addListener(() {
-      print("sdsd");
       setState(() {
         closeTopCarousel = _customListViewController.offset > 50;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _customListViewController.dispose();
   }
 
   @override
@@ -37,8 +43,8 @@ class _CarouselDemoState extends State<CarouselDemo> {
         controller: _customListViewController,
         itemCount: CarouselDemo.items.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(CarouselDemo.items[index].toString()),
+          return const ListTile(
+            title: ItemCard(),
           );
         },
       ))
