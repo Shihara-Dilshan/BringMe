@@ -31,7 +31,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
           items: [
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
@@ -41,7 +41,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
@@ -51,7 +51,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
@@ -61,7 +61,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
@@ -71,7 +71,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(

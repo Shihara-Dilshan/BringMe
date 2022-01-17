@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:payhere_demo/widgets/dashboard/image_carousel.dart';
-import 'package:payhere_demo/widgets/dashboard/item_card.dart';
 import 'package:payhere_demo/widgets/dashboard/item_carousel.dart';
 
 class Home extends StatefulWidget {
@@ -19,7 +18,6 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     _customListViewController.addListener(() {
-      print(_customListViewController.offset.toDouble().toString());
       setState(() {
         closeTopCarousel = _customListViewController.offset > 50;
       });
@@ -45,7 +43,7 @@ class _HomeState extends State<Home> {
         controller: _customListViewController,
         itemCount: Home.items.length,
         itemBuilder: (context, index) {
-          return ListTile(
+          return const ListTile(
             title: ComplicatedImageDemo(),
           );
         },

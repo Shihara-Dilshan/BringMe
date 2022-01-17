@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:payhere_demo/widgets/dashboard/item_card.dart';
 
 class ComplicatedImageDemo extends StatelessWidget {
   const ComplicatedImageDemo({Key? key}) : super(key: key);
@@ -23,84 +24,9 @@ class ComplicatedImageDemo extends StatelessWidget {
             aspectRatio: 1.6,
             enlargeCenterPage: false,
           ),
-          items: [
-            Container(
-              margin: const EdgeInsets.only(right: 10.0),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  children: <Widget>[
-                    Image.network(
-                        'https://essstr.blob.core.windows.net/essimg/350x/Small/Pic7434.jpg',
-                        fit: BoxFit.cover,
-                        width: 1000.0),
-                    const Positioned(
-                      top: 20,
-                      left: 10,
-                      child: Text(
-                        "Signal Toothpaste Strong Teeth 160g",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 35,
-                      left: 10,
-                      child: Text(
-                        "Rs 120",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 10,
-                      child: Row(
-                        children: [
-                          TextButton(
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                Colors.black,
-                              ),
-                            ),
-                            onPressed: () {},
-                            child: const Text('Add to cart'),
-                          ),
-                          TextButton(
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                Colors.black,
-                              ),
-                            ),
-                            onPressed: () {},
-                            child: const Text('Buy now'),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(right: 10.0),
-              child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  child: Stack(
-                    children: <Widget>[
-                      Image.network(
-                          'https://essstr.blob.core.windows.net/essimg/350x/Small/Pic120644.jpg',
-                          fit: BoxFit.cover,
-                          width: 1000.0),
-                    ],
-                  )),
-            )
+          items: const [
+            ItemCard(),
+            ItemCard(),
           ],
         ),
       ],
