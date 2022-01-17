@@ -24,7 +24,7 @@ class ComplicatedImageDemo extends StatelessWidget {
             aspectRatio: 1.6,
             enlargeCenterPage: false,
           ),
-          items: const [
+          items: [
             ItemCard(),
             ItemCard(),
           ],
