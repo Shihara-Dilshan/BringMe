@@ -35,7 +35,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://raw.githubusercontent.com/Shihara-Dilshan/BringMeLK-Android-FireBase/master/app/src/main/res/drawable-hdpi/deliverv2.jpg"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/DirectImportCarousel.jpg"),
                 ),
               ),
             ),
@@ -45,7 +45,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://media.gettyimages.com/photos/delicious-fresh-vegetables-and-fruits-at-the-refrigerated-section-of-picture-id1172975655?s=2048x2048"),
+                      "https://essstr.blob.core.windows.net/uiimg/Carousel/slide9.jpg"),
                 ),
               ),
             ),

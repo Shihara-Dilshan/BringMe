@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     _customListViewController.addListener(() {
+      print(_customListViewController.offset.toDouble().toString());
       setState(() {
         closeTopCarousel = _customListViewController.offset > 50;
       });
